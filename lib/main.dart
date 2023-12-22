@@ -1,4 +1,4 @@
-import 'package:binav_company_profile/home.dart';
+import 'package:binav_company_profile/section/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
