@@ -13,6 +13,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   responsive_ui: ^3.0.1
+  carousel_slider: ^4.2.1
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -28,3 +30,13 @@ flutter:
   assets:
     - assets/
 
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Light.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 600

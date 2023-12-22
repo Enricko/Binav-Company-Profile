@@ -19,7 +19,7 @@ class _NavbarSectionState extends State<NavbarSection> {
       iconTheme: const IconThemeData(
         color: Colors.white, // Change this color to the desired color
       ),
-      elevation: 10.0,
+      // elevation: 10.0,
       shadowColor: Colors.blue,
       title: Image.asset(
         "assets/logo_transparent.png",

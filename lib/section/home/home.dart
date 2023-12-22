@@ -2,6 +2,8 @@ import 'package:binav_company_profile/section/home/about_us.dart';
 import 'package:binav_company_profile/section/navbar.dart';
 import 'package:flutter/material.dart';
 
+import 'carousel.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -88,10 +90,11 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 15,vertical:25),
             child: Column(
               children: [
                 // About Us
+                Carousel(),
+                SizedBox(height: 20,),
                 AboutUsSection(),
               ],
             ),
