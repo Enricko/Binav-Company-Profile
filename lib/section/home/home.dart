@@ -12,10 +12,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  ScrollController _pageScrollController = ScrollController();
+  GlobalKey _homeSectionKey = GlobalKey();
+  GlobalKey _aboutSectionKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const NavbarSection(),
+      appBar: NavbarSection(globalKeys:{
+        "home":_homeSectionKey,
+        "about":_aboutSectionKey,
+      }),
       endDrawer: Drawer(
         child: ListView(
           children: [
@@ -25,7 +31,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Scrollable.ensureVisible(
+                  _homeSectionKey.currentContext!,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
               title: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Padding(
@@ -40,7 +52,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Scrollable.ensureVisible(
+                  _aboutSectionKey.currentContext!,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
               title: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Padding(
@@ -93,9 +111,17 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 // About Us
-                Carousel(),
-                SizedBox(height: 20,),
-                AboutUsSection(),
+                Container(
+                  key: _homeSectionKey,
+                  child: Carousel(),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  key: _aboutSectionKey,
+                  child: AboutUsSection(),
+                ),
               ],
             ),
           ),

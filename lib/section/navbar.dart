@@ -2,7 +2,8 @@ import 'package:binav_company_profile/utils/button.dart';
 import 'package:flutter/material.dart';
 
 class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
-  const NavbarSection({super.key}) : preferredSize = const Size.fromHeight(kToolbarHeight);
+  const NavbarSection({super.key, required this.globalKeys}) : preferredSize = const Size.fromHeight(kToolbarHeight);
+  final Map<String, GlobalKey<State<StatefulWidget>>> globalKeys;
   @override
   final Size preferredSize;
 
@@ -28,12 +29,24 @@ class _NavbarSectionState extends State<NavbarSection> {
       actions: [
         if (MediaQuery.of(context).size.width > 750)
           TopbarButton(
-            onTap: () {},
+            onTap: () {
+              Scrollable.ensureVisible(
+                widget.globalKeys['home']!.currentContext!,
+                duration: Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
             text: "Home",
           ),
         if (MediaQuery.of(context).size.width > 750)
           TopbarButton(
-            onTap: () {},
+            onTap: () {
+               Scrollable.ensureVisible(
+                widget.globalKeys['about']!.currentContext!,
+                duration: Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
             text: "About",
           ),
         if (MediaQuery.of(context).size.width > 750)
