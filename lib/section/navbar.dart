@@ -28,7 +28,6 @@ class _NavbarSectionState extends State<NavbarSection> {
 
   @override
   Widget build(BuildContext context) {
-    print(scaleScroll());
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: scrollBool() ? Colors.transparent : Colors.white,

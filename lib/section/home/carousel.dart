@@ -19,14 +19,21 @@ class _CarouselState extends State<Carousel> {
       CarouselSlider(
         items: [
           // Tambahkan item carousel di sini
+          // Container(
+          //   decoration: BoxDecoration(
+          //     color: Colors.blue,
+          //   ),
+          // ),
           Container(
-            decoration: BoxDecoration(
-              color: Colors.blue,
+            child: Image.asset(
+              "carousel.jpg",
+              fit: BoxFit.fill,
             ),
           ),
           Container(
-            decoration: BoxDecoration(
-              color: Colors.green,
+            child: Image.asset(
+              "carousel1.jpeg",
+              fit: BoxFit.fill,
             ),
           ),
           // Tambahkan item lain sesuai kebutuhan
@@ -44,11 +51,12 @@ class _CarouselState extends State<Carousel> {
           height: height >= 600 ? height : 600,
           padding: EdgeInsets.all(height / 6),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Color(0xFF727272), Color(0xFFFFFF)],
-            ),
+            // gradient: LinearGradient(
+            //   begin: Alignment.centerLeft,
+            //   end: Alignment.centerRight,
+            //   colors: [Color(0xFF727272), Color(0xFFFFFF)],
+            // ),
+            color: Color.fromARGB(135, 0, 0, 0)
           ),
           child: FittedBox(
             fit: BoxFit.scaleDown,
