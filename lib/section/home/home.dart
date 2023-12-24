@@ -16,11 +16,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ScrollController pageScrollController = ScrollController();
+  final GlobalKey _homeSectionKey = GlobalKey();
+  final GlobalKey _aboutSectionKey = GlobalKey();
+  final GlobalKey _footerSectionKey = GlobalKey();
+
   String currentSection = "home";
-  ScrollController _pageScrollController = ScrollController();
-  GlobalKey _homeSectionKey = GlobalKey();
-  GlobalKey _aboutSectionKey = GlobalKey();
-  GlobalKey _footerSectionKey = GlobalKey();
+  double scrollOffset = 0;
 
   // Mengecek Visibility %
   Map<String, double> sectionVisibility = {};
@@ -51,18 +53,25 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    pageScrollController.addListener(() {
+      setState(() {
+        scrollOffset = pageScrollController.offset;
+      });
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     checkSection();
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: NavbarSection(
-        globalKeys: {
-          "home": _homeSectionKey,
-          "about": _aboutSectionKey,
-          "footer": _footerSectionKey,
-        },
-        currentSection: currentSection,
-      ),
+      appBar: NavbarSection(globalKeys: {
+        "home": _homeSectionKey,
+        "about": _aboutSectionKey,
+        "footer": _footerSectionKey,
+      }, currentSection: currentSection, scrollOffset: scrollOffset),
       endDrawer: Drawer(
         child: ListView(
           children: [
@@ -147,6 +156,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: ListView(
+        controller: pageScrollController,
         padding: EdgeInsets.zero,
         children: [
           // About Us

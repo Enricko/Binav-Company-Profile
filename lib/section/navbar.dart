@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
-  const NavbarSection({super.key, required this.globalKeys, required this.currentSection})
-      : preferredSize = const Size.fromHeight(kToolbarHeight);
+  NavbarSection({super.key, required this.globalKeys, required this.currentSection, required this.scrollOffset})
+      : preferredSize = Size.fromHeight(
+            kToolbarHeight * (1.4 - ((scrollOffset >= 0 && scrollOffset <= 20 ? scrollOffset / 5 : 4) / 10)));
   final Map<String, GlobalKey<State<StatefulWidget>>> globalKeys;
   final String currentSection;
+  final double scrollOffset;
   @override
   final Size preferredSize;
 
@@ -16,25 +18,39 @@ class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _NavbarSectionState extends State<NavbarSection> {
+  double scaleScroll() {
+    return (1.3 - ((widget.scrollOffset >= 0 && widget.scrollOffset <= 20 ? widget.scrollOffset / 6.6 : 3) / 10));
+  }
+
+  bool scrollBool() {
+    return widget.scrollOffset >= 0 && widget.scrollOffset <= 20;
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(scaleScroll());
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
+      backgroundColor: scrollBool() ? Colors.transparent : Colors.white,
       iconTheme: const IconThemeData(
         color: Colors.white, // Change this color to the desired color
       ),
-      elevation: 0,
-      // shadowColor: Colors.blue,
-      title: Image.asset(
-        "assets/logo_transparent.png",
-        width: 100,
+      elevation: scrollBool() ? 0 : 10,
+      shadowColor: scrollBool() ? null : Colors.blue,
+      toolbarHeight: 1000,
+      title: AnimatedScale(
+        scale: scaleScroll(),
+        duration: Duration(milliseconds: 300),
+        alignment: Alignment.centerLeft,
+        child: Image.asset(
+          "assets/logo_transparent.png",
+          width: 100,
+        ),
       ),
       actions: [
         if (MediaQuery.of(context).size.width > 750)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "home",
-
             ontap: () {
               Scrollable.ensureVisible(
                 widget.globalKeys['home']!.currentContext!,
@@ -43,8 +59,8 @@ class _NavbarSectionState extends State<NavbarSection> {
               );
             },
             text: "HOME",
-            defaultColor: Colors.black,
-            hoverColor: Colors.blue,
+            defaultColor: scrollBool() ? Colors.white : Colors.black,
+            hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
         const SizedBox(
           width: 25,
@@ -60,8 +76,8 @@ class _NavbarSectionState extends State<NavbarSection> {
               );
             },
             text: "ABOUT",
-            defaultColor: Colors.black,
-            hoverColor: Colors.blue,
+            defaultColor: scrollBool() ? Colors.white : Colors.black,
+            hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
         const SizedBox(
           width: 25,
@@ -71,8 +87,8 @@ class _NavbarSectionState extends State<NavbarSection> {
             selected: widget.currentSection.toLowerCase() == "services",
             ontap: () {},
             text: "SERVICES",
-            defaultColor: Colors.black,
-            hoverColor: Colors.blue,
+            defaultColor: scrollBool() ? Colors.white : Colors.black,
+            hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
         const SizedBox(
           width: 25,
@@ -82,8 +98,8 @@ class _NavbarSectionState extends State<NavbarSection> {
             selected: widget.currentSection.toLowerCase() == "contact us",
             ontap: () {},
             text: "CONTACT US",
-            defaultColor: Colors.black,
-            hoverColor: Colors.blue,
+            defaultColor: scrollBool() ? Colors.white : Colors.black,
+            hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
         const SizedBox(
           width: 25,
@@ -149,8 +165,8 @@ class _HoverTextState extends State<HoverText> with SingleTickerProviderStateMix
                 child: Text(
                   widget.text,
                   style: TextStyle(
-                    color: isHovered || widget.selected ? widget.hoverColor : widget.defaultColor,
-                  ),
+                      color: isHovered || widget.selected ? widget.hoverColor : widget.defaultColor,
+                      fontWeight: FontWeight.w600),
                 ),
               ),
               Align(
