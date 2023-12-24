@@ -12,7 +12,7 @@ class _AboutUsSectionState extends State<AboutUsSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+      padding: EdgeInsets.symmetric(horizontal: 35, vertical: 40),
       child: Column(
         children: [
           Container(

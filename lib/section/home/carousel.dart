@@ -14,6 +14,7 @@ class _CarouselState extends State<Carousel> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Stack(children: [
       CarouselSlider(
         items: [
@@ -31,7 +32,7 @@ class _CarouselState extends State<Carousel> {
           // Tambahkan item lain sesuai kebutuhan
         ],
         options: CarouselOptions(
-          height: 500,
+          height: height >= 600 ? height : 600,
           enableInfiniteScroll: true,
           autoPlay: true,
           aspectRatio: 16 / 9,
@@ -40,8 +41,8 @@ class _CarouselState extends State<Carousel> {
       ),
       Container(
           width: width,
-          height: 500,
-          padding: const EdgeInsets.all(50),
+          height: height >= 600 ? height : 600,
+          padding: EdgeInsets.all(height / 6),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
