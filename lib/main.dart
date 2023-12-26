@@ -16,7 +16,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textSelectionTheme: TextSelectionThemeData(
+          selectionColor: Colors.blue.withOpacity(0.4)
+        ),
         useMaterial3: true,
+          
           fontFamily: 'Poppins',
       ),
       home: const HomePage(),

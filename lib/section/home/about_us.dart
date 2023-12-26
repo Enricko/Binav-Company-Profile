@@ -13,11 +13,11 @@ class _AboutUsSectionState extends State<AboutUsSection> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
+        color: Color(0xfff6f6f6),
         padding: EdgeInsets.symmetric(horizontal: 35, vertical: 40),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 60),
               child: const Center(
                 child: Column(
                   children: [
