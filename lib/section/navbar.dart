@@ -144,6 +144,7 @@ class _HoverTextState extends State<HoverText> with SingleTickerProviderStateMix
     return GestureDetector(
       onTap: widget.ontap,
       child: MouseRegion(
+          cursor: SystemMouseCursors.click,
         onEnter: (_) {
           setState(() {
             isHovered = true;
@@ -173,11 +174,11 @@ class _HoverTextState extends State<HoverText> with SingleTickerProviderStateMix
                 child: SizedBox(
                   width: 75,
                   child: isHovered || widget.selected
-                      ? const Divider(
+                      ? Divider(
                           thickness: 3,
                           indent: 10,
                           endIndent: 10,
-                          color: Colors.black,
+                          color: widget.defaultColor,
                           height: 20,
                         )
                       : const SizedBox(),
