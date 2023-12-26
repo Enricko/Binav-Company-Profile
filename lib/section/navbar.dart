@@ -96,7 +96,13 @@ class _NavbarSectionState extends State<NavbarSection> {
         if (MediaQuery.of(context).size.width > 750)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "services",
-            ontap: () {},
+            ontap: () {
+              Scrollable.ensureVisible(
+                widget.globalKeys['services']!.currentContext!,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
             text: "SERVICES",
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,
@@ -106,8 +112,14 @@ class _NavbarSectionState extends State<NavbarSection> {
         ),
         if (MediaQuery.of(context).size.width > 750)
           HoverText(
-            selected: widget.currentSection.toLowerCase() == "contact us",
-            ontap: () {},
+            selected: widget.currentSection.toLowerCase() == "contact",
+            ontap: () {
+              Scrollable.ensureVisible(
+                widget.globalKeys['contact']!.currentContext!,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
             text: "CONTACT US",
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,

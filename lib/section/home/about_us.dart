@@ -11,10 +11,10 @@ class AboutUsSection extends StatefulWidget {
 class _AboutUsSectionState extends State<AboutUsSection> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        color: Color(0xfff6f6f6),
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+    return Container(
+      color: Color(0xfff6f6f6),
+      padding: EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+      child: SafeArea(
         child: Column(
           children: [
             Container(

@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
   String currentSection = "home";
   double scrollOffset = 0;
 
-
   // Mengecek Visibility %
   Map<String, double> sectionVisibility = {};
 
@@ -59,8 +58,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-
-
   @override
   void initState() {
     pageScrollController.addListener(() {
@@ -71,12 +68,11 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     checkSection();
+    var width = MediaQuery.of(context).size.width;
     return SelectionArea(
-
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: NavbarSection(globalKeys: {
