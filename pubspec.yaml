@@ -19,6 +19,7 @@ dependencies:
   url_launcher: ^6.2.2
   visibility_detector: ^0.4.0+2
   mailer: ^6.0.1
+  webview_flutter: ^4.4.2
 
 dev_dependencies:
   flutter_test:

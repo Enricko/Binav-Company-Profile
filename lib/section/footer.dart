@@ -18,14 +18,13 @@ class _FooterState extends State<Footer> {
       color: Color(0xFF283646),
       padding: EdgeInsets.symmetric(vertical: 35),
       child: Responsive(
-        // runAlignment: WrapAlignment.start,
         alignment: WrapAlignment.start,
         children: [
           Div(
             divison: Division(
-              colXL: 6,
-              colL: 6,
-              colM: 12,
+              colXL: 3,
+              colL: 3,
+              colM: 6,
               colS: 12,
               colXS: 12,
             ),
@@ -33,13 +32,17 @@ class _FooterState extends State<Footer> {
               padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
                     "assets/logo_transparent.png",
                     width: 100,
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Text(
-                    "Vilook.id adalah sebuah perusahaan yang bergerak dalam menyediakan jasa visual identity profesional dan berkarakter . Dalam perjalanannya, kami telah banyak berdedikasi dan berkontribusi membantu para client untuk membangun citra brand yang kuat dan berkesan. Sehingga brand dari client yang kami handle menjadi lebih cepat naik kelas dalam hal identitas visualnya Kami percaya bahwa semua brand memiliki potensi untuk berkembang luar biasa.",
+                    "binav, binav.co.id, kalimantan timur, kaltim, borneo, balikpapan, samarinda, jasa survey, batimatri, bathymatric survey, ,support construction, gnss rtk technology solution",
                     style: TextStyle(color: Colors.white),
                   ),
                 ],
@@ -48,92 +51,263 @@ class _FooterState extends State<Footer> {
           ),
           Div(
             divison: const Division(
-              colXL: 6,
-              colL: 6,
-              colM: 12,
+              colXL: 3,
+              colL: 3,
+              colM: 6,
               colS: 12,
               colXS: 12,
             ),
             child: Container(
-                padding: EdgeInsets.all(20),
-                child: Row(
+              padding: EdgeInsets.all(20),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Contact Information",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          children: [
-                            SvgPicture.asset("assets/icon_phone.svg", height: 20, color: Colors.white),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "085158426044",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            SvgPicture.asset("assets/icon_mail.svg", height: 20, color: Colors.white),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "fadillarizky294@gmail.com",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              "assets/icon_location.svg",
-                              height: 20,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Yogyakarta",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        ElevatedButton(
-                            style: ButtonStyle(foregroundColor: MaterialStatePropertyAll(Color(0xFF283646))),
-                            onPressed: () {
-                              Scrollable.ensureVisible(
-                                widget.globalKeys['contact']!.currentContext!,
-                                duration: const Duration(milliseconds: 500),
-                                curve: Curves.easeInOut,
-                              );
-                            },
-                            child: Text("Hubungi Kami"))
-                      ],
+                    Text(
+                      "About Us",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    HoverText(
+                      ontap: () {
+                        Scrollable.ensureVisible(
+                          widget.globalKeys['about']!.currentContext!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      text: "About",
+                      defaultColor: Colors.white,
+                      hoverColor: Colors.blue,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    HoverText(
+                      ontap: () {
+                        Scrollable.ensureVisible(
+                          widget.globalKeys['services']!.currentContext!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      text: "Service",
+                      defaultColor: Colors.white,
+                      hoverColor: Colors.blue,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    HoverText(
+                      ontap: () {
+                        Scrollable.ensureVisible(
+                          widget.globalKeys['contact']!.currentContext!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      text: "Contact",
+                      defaultColor: Colors.white,
+                      hoverColor: Colors.blue,
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
-                )),
+                ),
+              ),
+            ),
+          ),
+          Div(
+            divison: const Division(
+              colXL: 3,
+              colL: 3,
+              colM: 6,
+              colS: 12,
+              colXS: 12,
+            ),
+            child: Container(
+              padding: EdgeInsets.all(20),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Contact Information",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset("assets/icon_phone.svg", height: 20, color: Colors.white),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "085158426044",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset("assets/icon_mail.svg", height: 20, color: Colors.white),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "fadillarizky294@gmail.com",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          "assets/icon_location.svg",
+                          height: 20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Yogyakarta",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                        style: ButtonStyle(foregroundColor: MaterialStatePropertyAll(Color(0xFF283646))),
+                        onPressed: () {
+                          Scrollable.ensureVisible(
+                            widget.globalKeys['contact']!.currentContext!,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: Text("Hubungi Kami"))
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Div(
+            divison: const Division(
+              colXL: 3,
+              colL: 3,
+              colM: 6,
+              colS: 12,
+              colXS: 12,
+            ),
+            child: Container(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Our Address",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    "Jl. DI. Panjaitan No.63, Gn. Samarinda, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76122",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
     );
+  }
+}
+
+class HoverText extends StatefulWidget {
+  final String text;
+  final Color defaultColor;
+  final Color hoverColor;
+  final VoidCallback ontap;
+
+  HoverText({
+    required this.text,
+    required this.defaultColor,
+    required this.hoverColor,
+    required this.ontap,
+  });
+
+  @override
+  _HoverTextState createState() => _HoverTextState();
+}
+
+class _HoverTextState extends State<HoverText> with SingleTickerProviderStateMixin {
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: widget.ontap,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) {
+          setState(() {
+            isHovered = true;
+          });
+        },
+        onExit: (_) {
+          setState(() {
+            isHovered = false;
+          });
+        },
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 1),
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  widget.text,
+                  style: TextStyle(
+                    color: isHovered ? widget.hoverColor : widget.defaultColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void handleHover(bool hover) {
+    setState(() {
+      isHovered = hover;
+    });
   }
 }
