@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
           "footer": _footerSectionKey,
         }, currentSection: currentSection, scrollOffset: scrollOffset),
         endDrawer: Drawer(
-          child: ListView(
+          child: Column(
             children: [
               DrawerHeader(
                 child: Image.asset(
@@ -178,57 +178,67 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: ListView(
-          controller: pageScrollController,
-          padding: EdgeInsets.zero,
-          children: [
-            // About Us
-            VisibilityDetector(
-              key: _homeSectionKey,
-              onVisibilityChanged: (VisibilityInfo info) {
-                setState(() {
-                  sectionVisibility['home'] = info.visibleFraction; // Store visible fraction
-                });
-              },
-              child: Carousel(),
-            ),
-            VisibilityDetector(
-              key: _aboutSectionKey,
-              onVisibilityChanged: (VisibilityInfo info) {
-                setState(() {
-                  sectionVisibility['about'] = info.visibleFraction; // Store visible fraction
-                });
-              },
-              child: AboutUsSection(),
-            ),
-            VisibilityDetector(
-              key: _servicesSectionKey,
-              onVisibilityChanged: (VisibilityInfo info) {
-                setState(() {
-                  sectionVisibility['services'] = info.visibleFraction; // Store visible fraction
-                });
-              },
-              child: Services(),
-            ),
-            // VisibilityDetector(
-            //   key: _contactSectionKey,
-            //   onVisibilityChanged: (VisibilityInfo info) {
-            //     setState(() {
-            //       sectionVisibility['contact'] = info.visibleFraction; // Store visible fraction
-            //     });
-            //   },
-            //   child: ContactUs(),
-            // ),
-            VisibilityDetector(
-              key: _contactSectionKey,
-              onVisibilityChanged: (VisibilityInfo info) {
-                setState(() {
-                  sectionVisibility['contact'] = info.visibleFraction; // Store visible fraction
-                });
-              },
-              child: Footer(),
-            ),
-          ],
+        body: SingleChildScrollView(
+            controller: pageScrollController,
+            padding: EdgeInsets.zero,
+          child: Column(
+            children: [
+              // About Us
+              VisibilityDetector(
+                key: _homeSectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['home'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: Carousel(),
+              ),
+              VisibilityDetector(
+                key: _aboutSectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['about'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: AboutUsSection(),
+              ),
+              VisibilityDetector(
+                key: _servicesSectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['services'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: Services(),
+              ),
+              VisibilityDetector(
+                key: _contactSectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['contact'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: ContactUs(),
+              ),
+              VisibilityDetector(
+                key: _footerSectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['footer'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: Footer(
+                  globalKeys: {
+                    "home": _homeSectionKey,
+                    "about": _aboutSectionKey,
+                    "services": _servicesSectionKey,
+                    "contact": _contactSectionKey,
+                    "footer": _footerSectionKey,
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.green,

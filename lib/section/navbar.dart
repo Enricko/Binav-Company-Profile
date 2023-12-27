@@ -4,17 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
-  NavbarSection(
-      {super.key,
-      required this.globalKeys,
-      required this.currentSection,
-      required this.scrollOffset})
-      : preferredSize = Size.fromHeight(kToolbarHeight *
-            (1.4 -
-                ((scrollOffset >= 0 && scrollOffset <= 20
-                        ? scrollOffset / 5
-                        : 4) /
-                    10)));
+  NavbarSection({super.key, required this.globalKeys, required this.currentSection, required this.scrollOffset})
+      : preferredSize = Size.fromHeight(
+            kToolbarHeight * (1.4 - ((scrollOffset >= 0 && scrollOffset <= 20 ? scrollOffset / 5 : 4) / 10)));
   final Map<String, GlobalKey<State<StatefulWidget>>> globalKeys;
   final String currentSection;
   final double scrollOffset;
@@ -27,11 +19,7 @@ class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
 
 class _NavbarSectionState extends State<NavbarSection> {
   double scaleScroll() {
-    return (1.3 -
-        ((widget.scrollOffset >= 0 && widget.scrollOffset <= 20
-                ? widget.scrollOffset / 6.6
-                : 3) /
-            10));
+    return (1.3 - ((widget.scrollOffset >= 0 && widget.scrollOffset <= 20 ? widget.scrollOffset / 6.6 : 3) / 10));
   }
 
   bool scrollBool() {
@@ -160,8 +148,7 @@ class HoverText extends StatefulWidget {
   _HoverTextState createState() => _HoverTextState();
 }
 
-class _HoverTextState extends State<HoverText>
-    with SingleTickerProviderStateMixin {
+class _HoverTextState extends State<HoverText> with SingleTickerProviderStateMixin {
   bool isHovered = false;
 
   @override
@@ -169,7 +156,7 @@ class _HoverTextState extends State<HoverText>
     return GestureDetector(
       onTap: widget.ontap,
       child: MouseRegion(
-          cursor: SystemMouseCursors.click,
+        cursor: SystemMouseCursors.click,
         onEnter: (_) {
           setState(() {
             isHovered = true;
@@ -190,9 +177,7 @@ class _HoverTextState extends State<HoverText>
                 child: Text(
                   widget.text,
                   style: TextStyle(
-                      color: isHovered || widget.selected
-                          ? widget.hoverColor
-                          : widget.defaultColor,
+                      color: isHovered || widget.selected ? widget.hoverColor : widget.defaultColor,
                       fontWeight: FontWeight.w600),
                 ),
               ),

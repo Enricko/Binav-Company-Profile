@@ -4,8 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
 class Footer extends StatefulWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({Key? key, required this.globalKeys}) : super(key: key);
 
+  final Map<String, GlobalKey<State<StatefulWidget>>> globalKeys;
   @override
   State<Footer> createState() => _FooterState();
 }
@@ -15,6 +16,7 @@ class _FooterState extends State<Footer> {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFF283646),
+      padding: EdgeInsets.symmetric(vertical: 35),
       child: Responsive(
         // runAlignment: WrapAlignment.start,
         alignment: WrapAlignment.start,
@@ -59,10 +61,16 @@ class _FooterState extends State<Footer> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          "Contact Information",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Row(
                           children: [
-                            SvgPicture.asset("assets/icon_phone.svg",
-                                height: 20, color: Colors.white),
+                            SvgPicture.asset("assets/icon_phone.svg", height: 20, color: Colors.white),
                             SizedBox(
                               width: 10,
                             ),
@@ -72,11 +80,12 @@ class _FooterState extends State<Footer> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
-                            SvgPicture.asset("assets/icon_mail.svg",
-                                height: 20, color: Colors.white),
+                            SvgPicture.asset("assets/icon_mail.svg", height: 20, color: Colors.white),
                             SizedBox(
                               width: 10,
                             ),
@@ -86,7 +95,9 @@ class _FooterState extends State<Footer> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             SvgPicture.asset(
@@ -103,12 +114,19 @@ class _FooterState extends State<Footer> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 20,),
+                        SizedBox(
+                          height: 20,
+                        ),
                         ElevatedButton(
                             style: ButtonStyle(foregroundColor: MaterialStatePropertyAll(Color(0xFF283646))),
-                            onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (ctx)=>ContactUs()));
-                        }, child: Text("Hubungi Kami"))
+                            onPressed: () {
+                              Scrollable.ensureVisible(
+                                widget.globalKeys['contact']!.currentContext!,
+                                duration: const Duration(milliseconds: 500),
+                                curve: Curves.easeInOut,
+                              );
+                            },
+                            child: Text("Hubungi Kami"))
                       ],
                     ),
                   ],
