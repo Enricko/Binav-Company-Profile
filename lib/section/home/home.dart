@@ -1,5 +1,4 @@
 import 'package:binav_company_profile/section/home/about_us.dart';
-import 'package:binav_company_profile/section/home/contact%20us.dart';
 import 'package:binav_company_profile/section/home/services.dart';
 import 'package:binav_company_profile/section/navbar.dart';
 import 'package:flutter/foundation.dart';
@@ -9,8 +8,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+import '../contact_us.dart';
 import '../footer.dart';
 import 'carousel.dart';
+import 'contact.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -209,20 +210,20 @@ class _HomePageState extends State<HomePage> {
               },
               child: Services(),
             ),
+            // VisibilityDetector(
+            //   key: _contactSectionKey,
+            //   onVisibilityChanged: (VisibilityInfo info) {
+            //     setState(() {
+            //       sectionVisibility['contact'] = info.visibleFraction; // Store visible fraction
+            //     });
+            //   },
+            //   child: ContactUs(),
+            // ),
             VisibilityDetector(
               key: _contactSectionKey,
               onVisibilityChanged: (VisibilityInfo info) {
                 setState(() {
                   sectionVisibility['contact'] = info.visibleFraction; // Store visible fraction
-                });
-              },
-              child: ContactUs(),
-            ),
-            VisibilityDetector(
-              key: _footerSectionKey,
-              onVisibilityChanged: (VisibilityInfo info) {
-                setState(() {
-                  sectionVisibility['footer'] = info.visibleFraction; // Store visible fraction
                 });
               },
               child: Footer(),

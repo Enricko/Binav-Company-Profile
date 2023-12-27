@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ContactUs extends StatelessWidget {
-  const ContactUs({Key? key}) : super(key: key);
+class Contact extends StatelessWidget {
+  const Contact({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
