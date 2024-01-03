@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
   NavbarSection({super.key, required this.globalKeys, required this.currentSection, required this.scrollOffset})
@@ -112,6 +113,24 @@ class _NavbarSectionState extends State<NavbarSection> {
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
+        const SizedBox(
+          width: 25,
+        ),
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+          ),
+          child: Text("Vessel AVTS"),
+          onPressed: () async {
+            Uri url = Uri.parse("https//binav-avts.id");
+            if (await canLaunchUrl(url)) {
+              await launchUrl(url);
+            } else {
+              //email app is not opened
+            }
+          },
+        ),
         const SizedBox(
           width: 25,
         ),

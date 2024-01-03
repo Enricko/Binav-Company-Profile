@@ -12,6 +12,7 @@ class Services extends StatefulWidget {
 class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Container(
       color: Color(0xFFF0F8FF),
       padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
@@ -39,16 +40,20 @@ class _ServicesState extends State<Services> {
                         height: 20,
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: RichText(
-                        text: const TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(text: "PT.BINAV MAJU SEJAHTERA ", style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan(
-                                text:
-                                    "merupakan perusahaan terkemuka yang menyediakan layanan survei, penentuan posisi, dan eksplorasi bawah laut untuk industri minyak & gas lepas pantai serta konstruksi lepas pantai."),
-                          ],
+                    SizedBox(
+                      width: width * .80,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                          text: const TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(text: "PT.BINAV MAJU SEJAHTERA ", style: TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text:
+                                      "merupakan perusahaan terkemuka yang menyediakan layanan survei, penentuan posisi, dan eksplorasi bawah laut untuk industri minyak & gas lepas pantai serta konstruksi lepas pantai."),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -74,7 +79,7 @@ class _ServicesState extends State<Services> {
                     title: "Bawah Laut",
                     path: 'assets/icon_wave.svg',
                     subtitle:
-                        "Underwater inspection and maintenanceROV observation and intervention capabilities to support drilling and construction activitiesDP1 and DP2 vessel hire",
+                        "Pemetaan bawah laut yang menggabungkan teknologi canggih dengan keahlian khusus. Dari survei dasar laut hingga pemetaan yang detail, tim kami berdedikasi untuk menjelajahi dan memetakan kompleksitas lingkungan bawah laut. Dengan peralatan mutakhir, kami mengumpulkan data akurat tentang topografi, struktur geologis, serta keanekaragaman hayati di bawah laut.",
                   ),
                 ),
                 Div(
@@ -89,7 +94,7 @@ class _ServicesState extends State<Services> {
                     title: "Survey",
                     path: 'assets/icon_telescope.svg',
                     subtitle:
-                        "Rig Positioning using miniaturized packageBathymetric Survey with MBES or SBESOffshore Construction Surveys SupportSite hazard and Geophysical SurveysCable and Pipe Route Surveys with ROV’sOffshore Geotechnical and Soil Investigation SurveysOceanographic Survey & Weather ForecastingDimensional Survey Control",
+                        "Layanan survei kami dirancang dengan fokus pada ketelitian tinggi dan keandalan data. Tim ahli kami menggunakan teknologi terkini dan metodologi canggih untuk mengumpulkan, menganalisis, dan memvisualisasikan informasi yang diperlukan untuk memenuhi kebutuhan unik setiap klien. Mulai dari survei darat, udara, hingga survei bawah laut, kami siap memberikan solusi survei yang tepat dan akurat untuk proyek Anda.",
                   ),
                 ),
                 Div(
@@ -103,7 +108,7 @@ class _ServicesState extends State<Services> {
                   child: ServiceField(
                     title: "Tracking",
                     path: 'assets/icon_tracking.svg',
-                    subtitle: "Vessel tracking and securityPlatform Intruder DetectionData telemetry",
+                    subtitle: "Teknologi tracking kami memungkinkan Anda untuk memantau dan melacak aset atau informasi yang berharga dengan tepat dan real-time. Dengan sistem pelacakan yang terpercaya, kami memberikan kemampuan untuk mengawasi, memetakan, dan menganalisis pergerakan atau informasi yang diperlukan secara efisien. Kami menawarkan solusi tracking yang dapat disesuaikan, baik itu untuk manajemen logistik, pengawasan aktiva, atau pengelolaan sumber daya. Dengan layanan kami, Anda dapat mengoptimalkan operasi Anda dengan data yang terukur dan dapat diandalkan.",
                   ),
                 ),
               ],
@@ -150,6 +155,7 @@ class ServiceField extends StatelessWidget {
           ),
           Text(
             subtitle,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 15,
             ),

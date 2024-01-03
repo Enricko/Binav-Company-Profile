@@ -12,6 +12,11 @@ class Footer extends StatefulWidget {
 }
 
 class _FooterState extends State<Footer> {
+  String emailAddress = "binav-avts@binav-avts.id";
+  String phoneNumber = "+6287760970518";
+  String region = "Kota Balikpapan, Kalimantan Timur";
+  String address =
+      "Jl. DI. Panjaitan No.63, Gn. Samarinda, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76122";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +40,7 @@ class _FooterState extends State<Footer> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/logo_transparent.png",
+                    "assets/logo.jpg",
                     width: 100,
                   ),
                   SizedBox(
@@ -154,7 +159,7 @@ class _FooterState extends State<Footer> {
                           width: 10,
                         ),
                         Text(
-                          "085158426044",
+                          "$phoneNumber",
                           style: TextStyle(color: Colors.white),
                         ),
                       ],
@@ -169,7 +174,7 @@ class _FooterState extends State<Footer> {
                           width: 10,
                         ),
                         Text(
-                          "fadillarizky294@gmail.com",
+                          "$emailAddress",
                           style: TextStyle(color: Colors.white),
                         ),
                       ],
@@ -188,7 +193,7 @@ class _FooterState extends State<Footer> {
                           width: 10,
                         ),
                         Text(
-                          "Yogyakarta",
+                          "$region",
                           style: TextStyle(color: Colors.white),
                         ),
                       ],
@@ -233,7 +238,7 @@ class _FooterState extends State<Footer> {
                     height: 30,
                   ),
                   Text(
-                    "Jl. DI. Panjaitan No.63, Gn. Samarinda, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76122",
+                    "$address",
                     style: TextStyle(color: Colors.white),
                   ),
                 ],

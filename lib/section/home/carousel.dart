@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_ui/responsive_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Carousel extends StatefulWidget {
   const Carousel({super.key});
@@ -26,7 +27,7 @@ class _CarouselState extends State<Carousel> {
             CarouselItem(
               width: width,
               height: height,
-              image: AssetImage("carousel.jpg"),
+              image: AssetImage("carousel1.jpeg"),
               titleText: "Selamat Datang di PT. Binav Maju Sejahtera",
               text:
                   "Solusi canggih mengelola armada secara efisien, meningkatkan produktivitas, dan meningkatkan keamanan operasional",
@@ -37,12 +38,19 @@ class _CarouselState extends State<Carousel> {
             CarouselItem(
               width: width,
               height: height,
-              image: AssetImage("carousel1.jpeg"),
+              image: AssetImage("carousel.jpg"),
               text:
-                  "Solusi canggih mengelola armada secara efisien, meningkatkan produktivitas, dan meningkatkan keamanan operasional",
+                  "Sistem pemantauan dan pelacakan kapal yang canggih untuk memastikan keamanan, efisiensi, dan keandalan dalam pengelolaan armada perairan Anda.",
               buttonEnabled: true,
               buttonText: "Selengkapnya",
-              buttonTap: () {},
+              buttonTap: () async {
+                Uri url = Uri.parse("https//binav-avts.id");
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                } else {
+                  //email app is not opened
+                }
+              },
             ),
             // Tambahkan item lain sesuai kebutuhan
           ],
@@ -174,7 +182,6 @@ class _CarouselItemState extends State<CarouselItem> {
               if (widget.buttonEnabled)
                 Container(
                   alignment: Alignment.center,
-                  height: 50,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.blue),

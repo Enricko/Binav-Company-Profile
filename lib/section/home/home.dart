@@ -175,12 +175,27 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+                child: Text("Vessel AVTS"),
+                onPressed: () async {
+                  Uri url = Uri.parse("https//binav-avts.id");
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  } else {
+                    //email app is not opened
+                  }
+                },
+              ),
             ],
           ),
         ),
         body: SingleChildScrollView(
-            controller: pageScrollController,
-            padding: EdgeInsets.zero,
+          controller: pageScrollController,
+          padding: EdgeInsets.zero,
           child: Column(
             children: [
               // About Us

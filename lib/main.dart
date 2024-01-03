@@ -2,6 +2,8 @@ import 'package:binav_company_profile/section/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -13,15 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PT. Binav Maju Sejahtera',
-          debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        textSelectionTheme: TextSelectionThemeData(
-          selectionColor: Colors.blue.withOpacity(0.4)
-        ),
+        textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.blue.withOpacity(0.4)),
         useMaterial3: true,
-          
-          fontFamily: 'Poppins',
+        fontFamily: 'Poppins',
       ),
       home: const HomePage(),
     );
