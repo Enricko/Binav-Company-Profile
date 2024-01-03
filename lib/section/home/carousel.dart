@@ -44,7 +44,7 @@ class _CarouselState extends State<Carousel> {
               buttonEnabled: true,
               buttonText: "Selengkapnya",
               buttonTap: () async {
-                Uri url = Uri.parse("https//binav-avts.id");
+                Uri url = Uri.parse("https://binav-avts.id");
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
                 } else {

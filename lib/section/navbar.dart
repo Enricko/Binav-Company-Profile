@@ -123,7 +123,7 @@ class _NavbarSectionState extends State<NavbarSection> {
           ),
           child: Text("Vessel AVTS"),
           onPressed: () async {
-            Uri url = Uri.parse("https//binav-avts.id");
+            Uri url = Uri.parse("https://binav-avts.id");
             if (await canLaunchUrl(url)) {
               await launchUrl(url);
             } else {
