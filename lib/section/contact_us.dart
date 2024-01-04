@@ -14,7 +14,7 @@ class ContactUs extends StatefulWidget {
 
 class _ContactUsState extends State<ContactUs> {
   String emailAddress = "binav-avts@binav-avts.id";
-  String phoneNumber = "+6287760970518";
+  String phoneNumber = "+628115442085";
   final _formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   TextEditingController mobileNumberController = TextEditingController();

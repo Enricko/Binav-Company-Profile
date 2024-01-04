@@ -11,7 +11,6 @@ import 'package:visibility_detector/visibility_detector.dart';
 import '../contact_us.dart';
 import '../footer.dart';
 import 'carousel.dart';
-import 'contact.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,7 +35,7 @@ class _HomePageState extends State<HomePage> {
 
   void launchWhatsApp() async {
     // Replace the phone number with the desired number
-    String phoneNumber = "+6285158426044";
+    String phoneNumber = "+628115442085";
 
     String whatsappUrl = "https://wa.me/$phoneNumber";
     if (await canLaunchUrl(Uri.parse(whatsappUrl))) {

@@ -13,10 +13,11 @@ class Footer extends StatefulWidget {
 
 class _FooterState extends State<Footer> {
   String emailAddress = "binav-avts@binav-avts.id";
-  String phoneNumber = "+6287760970518";
+  String phoneNumber = "+628115442085";
   String region = "Kota Balikpapan, Kalimantan Timur";
   String address =
       "Jl. DI. Panjaitan No.63, Gn. Samarinda, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76122";
+      
   @override
   Widget build(BuildContext context) {
     return Container(
