@@ -17,7 +17,7 @@ class _FooterState extends State<Footer> {
   String region = "Kota Balikpapan, Kalimantan Timur";
   String address =
       "Jl. DI. Panjaitan No.63, Gn. Samarinda, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76122";
-      
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -78,6 +78,21 @@ class _FooterState extends State<Footer> {
                     ),
                     SizedBox(
                       height: 30,
+                    ),
+                    HoverText(
+                      ontap: () {
+                        Scrollable.ensureVisible(
+                          widget.globalKeys['home']!.currentContext!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      text: "Home",
+                      defaultColor: Colors.white,
+                      hoverColor: Colors.blue,
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     HoverText(
                       ontap: () {
