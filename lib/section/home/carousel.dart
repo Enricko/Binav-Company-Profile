@@ -27,7 +27,7 @@ class _CarouselState extends State<Carousel> {
             CarouselItem(
               width: width,
               height: height,
-              image: AssetImage("carousel1.jpeg"),
+              image: AssetImage("assets/carousel1.jpeg"),
               titleText: "Selamat Datang di PT. Binav Maju Sejahtera",
               text:
                   "Solusi canggih mengelola armada secara efisien, meningkatkan produktivitas, dan meningkatkan keamanan operasional",
@@ -38,7 +38,7 @@ class _CarouselState extends State<Carousel> {
             CarouselItem(
               width: width,
               height: height,
-              image: AssetImage("carousel.jpg"),
+              image: AssetImage("assets/carousel.jpg"),
               text:
                   "Sistem pemantauan dan pelacakan kapal yang canggih untuk memastikan keamanan, efisiensi, dan keandalan dalam pengelolaan armada perairan Anda.",
               buttonEnabled: true,
