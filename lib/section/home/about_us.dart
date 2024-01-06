@@ -11,13 +11,15 @@ class AboutUsSection extends StatefulWidget {
 class _AboutUsSectionState extends State<AboutUsSection> {
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Container(
-      color: Color(0xfff6f6f6),
-      padding: EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+      color: const Color(0xfff6f6f6),
+      padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
       child: SafeArea(
         child: Column(
           children: [
             Container(
+              margin: EdgeInsets.only(bottom: 40),
               child: const Center(
                 child: Column(
                   children: [
@@ -44,10 +46,11 @@ class _AboutUsSectionState extends State<AboutUsSection> {
             ),
             Responsive(
               runAlignment: WrapAlignment.end,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 if (MediaQuery.of(context).size.width > 897)
                   Div(
-                    divison: Division(
+                    divison: const Division(
                       colXL: 6,
                       colL: 6,
                       colM: 12,
@@ -55,20 +58,23 @@ class _AboutUsSectionState extends State<AboutUsSection> {
                       colXS: 12,
                     ),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                      child: Column(
+                      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "PT. BINAV MAJU SEJAHTERA",
+                            textAlign: TextAlign.start,
                             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w900, fontSize: 24),
                           ),
-                          // TODO : di ubah karena ini Text Contoh
+                          SizedBox(
+                            height: 20,
+                          ),
                           Text(
-                              "Selamat datang di PT. Binav Maju Sejahtera, pusat inovasi dalam pemetaan, survei, dan produk kartografi yang terkemuka. Sejak awal, kami memimpin industri dengan dedikasi tinggi dalam menyajikan solusi pemetaan yang terdepan dan terpercaya.\n\n"
-                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi canggih dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan yang mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
-                              "Kami tak hanya sekadar menawarkan layanan pemetaan dan survei berkualitas tinggi, tetapi juga menghasilkan produk kartografi inovatif yang memenuhi kebutuhan unik setiap klien kami. Setiap produk kami dibuat dengan teliti dan keahlian untuk memastikan kepuasan maksimal pelanggan."),
+                              "Selamat datang di PT. Binav Maju Sejahtera, pusat inovasi pemetaan, survei, dan produk kartografi yang terkemuka. Sejak awal, kami memimpin industri dengan dedikasi tinggi dalam menyajikan solusi pemetaan yang terdepan dan terpercaya.\n\n"
+                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi Modern dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan dengan mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
+                              "Kami tak hanya sekadar menawarkan layanan pemetaan dan survei berkualitas tinggi, tetapi juga menghasilkan produk kartografi inovatif yang memenuhi kebutuhan unik setiap klien kami. Setiap produk kami, dibuat dengan akurat dan terampil untuk memastikan kepuasan pelanggan."),
                         ],
                       ),
                     ),
@@ -82,16 +88,25 @@ class _AboutUsSectionState extends State<AboutUsSection> {
                     colXS: 12,
                   ),
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                    decoration:BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          blurRadius: 1,
+                          spreadRadius: 1,
+                        )
+                      ],
+                    ),
+                    margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                     child: Image.asset(
                       "assets/about_us.jpg",
-                      width: 100,
+                      fit:BoxFit.fill
                     ),
                   ),
                 ),
                 if (MediaQuery.of(context).size.width < 897)
                   Div(
-                    divison: Division(
+                    divison: const Division(
                       colXL: 6,
                       colL: 6,
                       colM: 12,
@@ -99,18 +114,22 @@ class _AboutUsSectionState extends State<AboutUsSection> {
                       colXS: 12,
                     ),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "PT. BINAV MAJU SEJAHTERA",
+                            textAlign: TextAlign.start,
                             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w900, fontSize: 24),
                           ),
-                          // TODO : di ubah karena ini Text Contoh
+                          SizedBox(
+                            height: 20,
+                          ),
                           Text(
-                            "Vilook.id adalah sebuah perusahaan yang bergerak dalam menyediakan jasa visual identity profesional dan berkarakter . Dalam perjalanannya, kami telah banyak berdedikasi dan berkontribusi membantu para client untuk membangun citra brand yang kuat dan berkesan. Sehingga brand dari client yang kami handle menjadi lebih cepat naik kelas dalam hal identitas visualnya.\n\n"
-                            "Kami percaya bahwa semua brand memiliki potensi untuk berkembang luar biasa. Oleh karena itu, identitas visual yang kuat adalah salah satu kunci terpenting untuk mencapai hal tersebut.\n\n"
-                            "Kami telah banyak membantu para client dari berbagai jenis sektor (bisnis, pemerintah, kampus, swasta, organisasi, komunitas, UMKM, dll) dalam memperkuat citra brand-nya melalui desain grafis, foto, video, website, dll yang terkonsep, menarik dan berkarakter.",
+                            "Selamat datang di PT. Binav Maju Sejahtera, pusat inovasi pemetaan, survei, dan produk kartografi yang terkemuka. Sejak awal, kami memimpin industri dengan dedikasi tinggi dalam menyajikan solusi pemetaan yang terdepan dan terpercaya.\n\n"
+                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi Modern dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan dengan mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
+                              "Kami tak hanya sekadar menawarkan layanan pemetaan dan survei berkualitas tinggi, tetapi juga menghasilkan produk kartografi inovatif yang memenuhi kebutuhan unik setiap klien kami. Setiap produk kami, dibuat dengan akurat dan terampil untuk memastikan kepuasan pelanggan.",
                           ),
                         ],
                       ),

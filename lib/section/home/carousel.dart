@@ -38,7 +38,7 @@ class _CarouselState extends State<Carousel> {
             CarouselItem(
               width: width,
               height: height,
-              image: AssetImage("assets/carousel.jpg"),
+              image: AssetImage("assets/carousel2.jpg"),
               text:
                   "Sistem pemantauan dan pelacakan kapal yang canggih untuk memastikan keamanan, efisiensi, dan keandalan dalam pengelolaan armada perairan Anda.",
               buttonEnabled: true,

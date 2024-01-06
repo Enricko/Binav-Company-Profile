@@ -108,7 +108,8 @@ class _ServicesState extends State<Services> {
                   child: ServiceField(
                     title: "Tracking",
                     path: 'assets/icon_tracking.svg',
-                    subtitle: "Teknologi tracking kami memungkinkan Anda untuk memantau dan melacak aset atau informasi yang berharga dengan tepat dan real-time. Dengan sistem pelacakan yang terpercaya, kami memberikan kemampuan untuk mengawasi, memetakan, dan menganalisis pergerakan atau informasi yang diperlukan secara efisien. Kami menawarkan solusi tracking yang dapat disesuaikan, baik itu untuk manajemen logistik, pengawasan aktiva, atau pengelolaan sumber daya. Dengan layanan kami, Anda dapat mengoptimalkan operasi Anda dengan data yang terukur dan dapat diandalkan.",
+                    subtitle:
+                        "Teknologi tracking kami memungkinkan Anda untuk memantau dan melacak aset atau informasi yang berharga dengan tepat dan real-time. Dengan sistem pelacakan yang terpercaya, kami memberikan kemampuan untuk mengawasi, memetakan, dan menganalisis pergerakan atau informasi yang diperlukan secara efisien. Kami menawarkan solusi tracking yang dapat disesuaikan, baik itu untuk manajemen logistik, pengawasan aktiva, atau pengelolaan sumber daya. Dengan layanan kami, Anda dapat mengoptimalkan operasi Anda dengan data yang terukur dan dapat diandalkan.",
                   ),
                 ),
               ],
@@ -136,7 +137,17 @@ class ServiceField extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            blurRadius: 1,
+            spreadRadius: 1,
+          )
+        ],
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

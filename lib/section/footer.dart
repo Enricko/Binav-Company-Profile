@@ -12,11 +12,11 @@ class Footer extends StatefulWidget {
 }
 
 class _FooterState extends State<Footer> {
-  String emailAddress = "binav-avts@binav-avts.id";
+  String emailAddress = "info@binav.co.id";
   String phoneNumber = "+628115442085";
+  String housePhoneNumber = "+62811544208";
   String region = "Kota Balikpapan, Kalimantan Timur";
-  String address =
-      "Jl. DI. Panjaitan No.63, Gn. Samarinda, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76122";
+  String address = "Jl. Cendana BlokA1/3, Batu Ampar, Balikpapan Utara, Kalimantan Timur. 76126";
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class _FooterState extends State<Footer> {
                     height: 30,
                   ),
                   Text(
-                    "binav, binav.co.id, kalimantan timur, kaltim, borneo, balikpapan, samarinda, jasa survey, batimatri, bathymatric survey, ,support construction, gnss rtk technology solution",
+                    "survey hydrografic, survey topografic, jasa survei, konsultasi survei, support construction, sonardyne, beacon, multi-bean. ",
                     style: TextStyle(color: Colors.white),
                   ),
                 ],
@@ -167,6 +167,21 @@ class _FooterState extends State<Footer> {
                     ),
                     SizedBox(
                       height: 30,
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset("assets/home_phone.svg", height: 20, color: Colors.white),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "$housePhoneNumber",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Row(
                       children: [

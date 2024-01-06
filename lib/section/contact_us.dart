@@ -13,8 +13,9 @@ class ContactUs extends StatefulWidget {
 }
 
 class _ContactUsState extends State<ContactUs> {
-  String emailAddress = "binav-avts@binav-avts.id";
+  String emailAddress = "info@binav.co.id";
   String phoneNumber = "+628115442085";
+  String housePhoneNumber = "+62811544208";
   final _formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   TextEditingController mobileNumberController = TextEditingController();
@@ -182,20 +183,24 @@ class _ContactUsState extends State<ContactUs> {
                       Row(
                         children: [
                           SvgPicture.asset(
-                            "assets/icon_location.svg",
+                            "assets/home_phone.svg",
                             height: 20,
                             color: Colors.white,
                           ),
                           SizedBox(
                             width: 10,
                           ),
-                          Flexible(
+                          InkWell(
+                            onTap: () async {
+                              Uri url = Uri.parse("tel:$housePhoneNumber");
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url);
+                              } else {
+                                //email app is not opened
+                              }
+                            },
                             child: Text(
-                              "Kota Balikpapan, Kalimantan Timur",
-                              overflow: TextOverflow.fade,
-                              maxLines: 2,
-                              
-                                              softWrap: true,
+                              "$housePhoneNumber",
                               style: TextStyle(fontSize: 15, color: Colors.white),
                             ),
                           ),
@@ -248,7 +253,34 @@ class _ContactUsState extends State<ContactUs> {
                             style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
                         ],
-                      )
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            "assets/icon_location.svg",
+                            height: 20,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Flexible(
+                            child: Text(
+                              "Kota Balikpapan, Kalimantan Timur",
+                              overflow: TextOverflow.fade,
+                              maxLines: 2,
+                              softWrap: true,
+                              style: TextStyle(fontSize: 15, color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 ),
