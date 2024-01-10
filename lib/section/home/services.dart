@@ -48,7 +48,10 @@ class _ServicesState extends State<Services> {
                           textAlign: TextAlign.center,
                           text: const TextSpan(
                             children: <TextSpan>[
-                              TextSpan(text: "PT.BINAV MAJU SEJAHTERA ", style: TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: "PT.BINAV MAJU SEJAHTERA ",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                               TextSpan(
                                   text:
                                       "merupakan perusahaan terkemuka yang menyediakan layanan survei, penentuan posisi, dan eksplorasi bawah laut untuk industri minyak & gas lepas pantai serta konstruksi lepas pantai."),
@@ -114,6 +117,284 @@ class _ServicesState extends State<Services> {
                 ),
               ],
             ),
+            Container(
+              margin: EdgeInsets.only(bottom: 40),
+              child: const Center(
+                child: Column(
+                  children: [
+                    Text(
+                      "OUR CLIENT",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 150,
+                      child: Divider(
+                        thickness: 3,
+                        indent: 20,
+                        endIndent: 20,
+                        color: Colors.black,
+                        height: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // Responsive(
+            //   // runAlignment: WrapAlignment.end,
+            //   children: [
+            //     Div(
+            //         divison: Division(
+            //           colXL: 2,
+            //           colL: 4,
+            //           colM: 6,
+            //           colS: 6,
+            //           colXS: 12,
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             LogoClient(path: "assets/client/PT_Apexindo.png"),
+            //             LogoClient(path: "assets/client/PT_Aquamarine.png"),
+            //           ],
+            //         )),
+            //     Div(
+            //         divison: Division(
+            //           colXL: 2,
+            //           colL: 4,
+            //           colM: 6,
+            //           colS: 6,
+            //           colXS: 12,
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             LogoClient(path: "assets/client/PT_BKI.png"),
+            //             Container(
+            //                 margin: EdgeInsets.all(10),
+            //                 height: 100,
+            //                 child: SvgPicture.asset(
+            //                     "assets/client/PT_DewiRahmi.svg")),
+            //             LogoClient(path: "assets/client/PT_Feria.png"),
+            //           ],
+            //         )),
+            //     Div(
+            //         divison: Division(
+            //           colXL: 2,
+            //           colL: 4,
+            //           colM: 6,
+            //           colS: 6,
+            //           colXS: 12,
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             LogoClient(path: "assets/client/PT_Geotindo.png"),
+            //             LogoClient(path: "assets/client/PT_IndoSraits.png"),
+            //             LogoClient(path: "assets/client/PT_Kideco.png"),
+            //           ],
+            //         )),
+            //     Div(
+            //         divison: Division(
+            //           colXL: 2,
+            //           colL: 4,
+            //           colM: 6,
+            //           colS: 6,
+            //           colXS: 12,
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             LogoClient(path: "assets/client/PT_Meindo.png"),
+            //             LogoClient(path: "assets/client/PT_ModernWidya.jpg"),
+            //             LogoClient(path: "assets/client/PT_Arutmin.jpg")
+            //           ],
+            //         )),
+            //     Div(
+            //         divison: Division(
+            //           colXL: 2,
+            //           colL: 4,
+            //           colM: 6,
+            //           colS: 6,
+            //           colXS: 12,
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             LogoClient(path: "assets/client/PT_PancaDuta.png"),
+            //             LogoClient(path: "assets/client/PT_PDC.jpg"),
+            //             LogoClient(path: "assets/client/PT_Onasis.png"),
+            //           ],
+            //         )),
+            //     Div(
+            //         divison: Division(
+            //           colXL: 2,
+            //           colL: 4,
+            //           colM: 6,
+            //           colS: 6,
+            //           colXS: 12,
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             LogoClient(path: "assets/client/PT_Taka.png"),
+            //             LogoClient(
+            //                 path: "assets/client/PT_PutraTunggalMandiri.jpg"),
+            //           ],
+            //         )),
+            //   ],
+            // ),
+            Responsive(
+              // runAlignment: WrapAlignment.end,
+              children: [
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Apexindo.png")),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Aquamarine.png")),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_BKI.png")),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: Container(
+                        margin: EdgeInsets.all(10),
+                        height: 100,
+                        child: SvgPicture.asset(
+                            "assets/client/PT_DewiRahmi.svg"))),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Feria.png"),),
+                Div(
+                  divison: Division(
+                    colXL: 2,
+                    colL: 4,
+                    colM: 4,
+                    colS: 4,
+                    colXS: 12,
+                  ),
+                  child: LogoClient(
+                      path: "assets/client/PT_PutraTunggalMandiri.jpg"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child:  LogoClient(path: "assets/client/PT_Geotindo.png"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_IndoSraits.png"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Kideco.png"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Meindo.png"),),
+                Div(
+                  divison: Division(
+                    colXL: 2,
+                    colL: 4,
+                    colM: 4,
+                    colS: 4,
+                    colXS: 12,
+                  ),
+                  child:  LogoClient(path: "assets/client/PT_ModernWidya.jpg"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Taka.png"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Arutmin.jpg")),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_PancaDuta.png"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_PDC.jpg"),),
+                Div(
+                    divison: Division(
+                      colXL: 2,
+                      colL: 4,
+                      colM: 4,
+                      colS: 4,
+                      colXS: 12,
+                    ),
+                    child: LogoClient(path: "assets/client/PT_Onasis.png"),),
+              ],
+            ),
           ],
         ),
       ),
@@ -121,10 +402,31 @@ class _ServicesState extends State<Services> {
   }
 }
 
+class LogoClient extends StatelessWidget {
+  final String path;
+
+  const LogoClient({
+    super.key,
+    required this.path,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.all(10),
+        height: 100,
+        child: Image.asset(
+          path,
+          height: 50,
+        ));
+  }
+}
+
 class ServiceField extends StatelessWidget {
   final String title;
   final String subtitle;
   final String path;
+
   const ServiceField({
     super.key,
     required this.path,
