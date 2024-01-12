@@ -112,6 +112,21 @@ class _FooterState extends State<Footer> {
                     HoverText(
                       ontap: () {
                         Scrollable.ensureVisible(
+                          widget.globalKeys['client']!.currentContext!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      text: "Our Client",
+                      defaultColor: Colors.white,
+                      hoverColor: Colors.blue,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    HoverText(
+                      ontap: () {
+                        Scrollable.ensureVisible(
                           widget.globalKeys['services']!.currentContext!,
                           duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut,
@@ -170,7 +185,7 @@ class _FooterState extends State<Footer> {
                     ),
                     Row(
                       children: [
-                        SvgPicture.asset("assets/home_phone.svg", height: 20, color: Colors.white),
+                        SvgPicture.asset("assets/icon_home_phone.svg", height: 20, color: Colors.white),
                         SizedBox(
                           width: 10,
                         ),

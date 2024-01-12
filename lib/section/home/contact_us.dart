@@ -183,7 +183,7 @@ class _ContactUsState extends State<ContactUs> {
                       Row(
                         children: [
                           SvgPicture.asset(
-                            "assets/home_phone.svg",
+                            "assets/icon_home_phone.svg",
                             height: 20,
                             color: Colors.white,
                           ),

@@ -49,7 +49,7 @@ class _NavbarSectionState extends State<NavbarSection> {
         ),
       ),
       actions: [
-        if (MediaQuery.of(context).size.width > 750)
+        if (MediaQuery.of(context).size.width > 800)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "home",
             ontap: () {
@@ -66,7 +66,7 @@ class _NavbarSectionState extends State<NavbarSection> {
         SizedBox(
           width: width / 49,
         ),
-        if (MediaQuery.of(context).size.width > 750)
+        if (MediaQuery.of(context).size.width > 800)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "about",
             ontap: () {
@@ -83,7 +83,7 @@ class _NavbarSectionState extends State<NavbarSection> {
         SizedBox(
           width: width / 49,
         ),
-        if (MediaQuery.of(context).size.width > 750)
+        if (MediaQuery.of(context).size.width > 800)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "services",
             ontap: () {
@@ -100,7 +100,7 @@ class _NavbarSectionState extends State<NavbarSection> {
         SizedBox(
           width: width / 49,
         ),
-        if (MediaQuery.of(context).size.width > 750)
+        if (MediaQuery.of(context).size.width > 800)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "client",
             ontap: () {
@@ -117,7 +117,7 @@ class _NavbarSectionState extends State<NavbarSection> {
         SizedBox(
           width: width / 49,
         ),
-        if (MediaQuery.of(context).size.width > 750)
+        if (MediaQuery.of(context).size.width > 800)
           HoverText(
             selected: widget.currentSection.toLowerCase() == "contact",
             ontap: () {
@@ -156,11 +156,11 @@ class _NavbarSectionState extends State<NavbarSection> {
         SizedBox(
           width: width / 49,
         ),
-        if (MediaQuery.of(context).size.width < 750)
+        if (MediaQuery.of(context).size.width < 800)
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.menu,
-              color: Colors.black,
+              color: scrollBool() ? Colors.white :Colors.black,
               size: 32,
             ),
             onPressed: () => Scaffold.of(context).openEndDrawer(),

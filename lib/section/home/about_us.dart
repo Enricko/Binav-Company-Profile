@@ -99,7 +99,7 @@ class _AboutUsSectionState extends State<AboutUsSection> {
                     ),
                     margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                     child: Image.asset(
-                      "assets/about_us.jpg",
+                      "assets/about_us.png",
                       fit:BoxFit.fill
                     ),
                   ),
