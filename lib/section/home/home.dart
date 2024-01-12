@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:responsive_ui/responsive_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -234,6 +235,18 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: ContactUs(),
               ),
+              Responsive(children: [
+                Div(
+                  divison: Division(
+                    colXS: 3, // buat lebar 375 ke bawah
+                    colS: 3, // buat lebar di antara 375 dan 596
+                    colM: 3, // buat lebar di antara 596 dan 897
+                    colL: 3, // buat lebar di antara 897 dan 1232
+                    colXL: 3, // buat lebar 1232 ke atas
+                  ),
+                  child: Container(),
+                )
+              ]),
               VisibilityDetector(
                 key: _footerSectionKey,
                 onVisibilityChanged: (VisibilityInfo info) {
