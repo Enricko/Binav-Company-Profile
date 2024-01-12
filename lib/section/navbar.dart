@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
   NavbarSection({super.key, required this.globalKeys, required this.currentSection, required this.scrollOffset})
       : preferredSize = Size.fromHeight(
-            kToolbarHeight * (1.4 - ((scrollOffset >= 0 && scrollOffset <= 20 ? scrollOffset / 5 : 4) / 10)));
+            kToolbarHeight * (1.8 - ((scrollOffset >= 0 && scrollOffset <= 20 ? scrollOffset / 5 : 4) / 10)));
   final Map<String, GlobalKey<State<StatefulWidget>>> globalKeys;
   final String currentSection;
   final double scrollOffset;
@@ -20,7 +20,7 @@ class NavbarSection extends StatefulWidget implements PreferredSizeWidget {
 
 class _NavbarSectionState extends State<NavbarSection> {
   double scaleScroll() {
-    return (1.3 - ((widget.scrollOffset >= 0 && widget.scrollOffset <= 20 ? widget.scrollOffset / 6.6 : 3) / 10));
+    return (1.7 - ((widget.scrollOffset >= 0 && widget.scrollOffset <= 20 ? widget.scrollOffset / 6.6 : 2) / 10));
   }
 
   bool scrollBool() {
@@ -29,6 +29,7 @@ class _NavbarSectionState extends State<NavbarSection> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: scrollBool() ? Colors.transparent : Colors.white,
@@ -62,8 +63,8 @@ class _NavbarSectionState extends State<NavbarSection> {
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
-        const SizedBox(
-          width: 25,
+        SizedBox(
+          width: width / 49,
         ),
         if (MediaQuery.of(context).size.width > 750)
           HoverText(
@@ -79,8 +80,8 @@ class _NavbarSectionState extends State<NavbarSection> {
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
-        const SizedBox(
-          width: 25,
+        SizedBox(
+          width: width / 49,
         ),
         if (MediaQuery.of(context).size.width > 750)
           HoverText(
@@ -96,8 +97,25 @@ class _NavbarSectionState extends State<NavbarSection> {
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
-        const SizedBox(
-          width: 25,
+        SizedBox(
+          width: width / 49,
+        ),
+        if (MediaQuery.of(context).size.width > 750)
+          HoverText(
+            selected: widget.currentSection.toLowerCase() == "client",
+            ontap: () {
+              Scrollable.ensureVisible(
+                widget.globalKeys['client']!.currentContext!,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
+            text: "OUR CLIENT",
+            defaultColor: scrollBool() ? Colors.white : Colors.black,
+            hoverColor: scrollBool() ? Colors.white : Colors.blue,
+          ),
+        SizedBox(
+          width: width / 49,
         ),
         if (MediaQuery.of(context).size.width > 750)
           HoverText(
@@ -113,15 +131,19 @@ class _NavbarSectionState extends State<NavbarSection> {
             defaultColor: scrollBool() ? Colors.white : Colors.black,
             hoverColor: scrollBool() ? Colors.white : Colors.blue,
           ),
-        const SizedBox(
-          width: 25,
+        SizedBox(
+          width: width / 49,
         ),
         ElevatedButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
             foregroundColor: MaterialStateProperty.all(Colors.white),
+            fixedSize: MaterialStateProperty.all(Size(125, 25)),
           ),
-          child: Text("Vessel AVTS"),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text("Vessel AVTS"),
+          ),
           onPressed: () async {
             Uri url = Uri.parse("https://binav-avts.id");
             if (await canLaunchUrl(url)) {
@@ -131,8 +153,8 @@ class _NavbarSectionState extends State<NavbarSection> {
             }
           },
         ),
-        const SizedBox(
-          width: 25,
+        SizedBox(
+          width: width / 49,
         ),
         if (MediaQuery.of(context).size.width < 750)
           IconButton(

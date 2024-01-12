@@ -1,4 +1,5 @@
 import 'package:binav_company_profile/section/home/about_us.dart';
+import 'package:binav_company_profile/section/home/our_client.dart';
 import 'package:binav_company_profile/section/home/services.dart';
 import 'package:binav_company_profile/section/navbar.dart';
 import 'package:flutter/foundation.dart';
@@ -9,9 +10,9 @@ import 'package:responsive_ui/responsive_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import '../contact_us.dart';
-import '../footer.dart';
-import 'carousel.dart';
+import 'home/contact_us.dart';
+import 'footer.dart';
+import 'home/carousel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey _homeSectionKey = GlobalKey();
   final GlobalKey _aboutSectionKey = GlobalKey();
   final GlobalKey _servicesSectionKey = GlobalKey();
+  final GlobalKey _clientSectionKey = GlobalKey();
   final GlobalKey _contactSectionKey = GlobalKey();
   final GlobalKey _footerSectionKey = GlobalKey();
 
@@ -80,6 +82,7 @@ class _HomePageState extends State<HomePage> {
           "home": _homeSectionKey,
           "about": _aboutSectionKey,
           "services": _servicesSectionKey,
+          "client": _clientSectionKey,
           "contact": _contactSectionKey,
           "footer": _footerSectionKey,
         }, currentSection: currentSection, scrollOffset: scrollOffset),
@@ -147,6 +150,27 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(5),
                     child: Text(
                       "Services".toUpperCase(),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  Scrollable.ensureVisible(
+                    _clientSectionKey.currentContext!,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                title: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Text(
+                      "Client".toUpperCase(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -227,6 +251,15 @@ class _HomePageState extends State<HomePage> {
                 child: Services(),
               ),
               VisibilityDetector(
+                key: _clientSectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['client'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: OurClient(),
+              ),
+              VisibilityDetector(
                 key: _contactSectionKey,
                 onVisibilityChanged: (VisibilityInfo info) {
                   setState(() {
@@ -235,18 +268,6 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: ContactUs(),
               ),
-              Responsive(children: [
-                Div(
-                  divison: Division(
-                    colXS: 3, // buat lebar 375 ke bawah
-                    colS: 3, // buat lebar di antara 375 dan 596
-                    colM: 3, // buat lebar di antara 596 dan 897
-                    colL: 3, // buat lebar di antara 897 dan 1232
-                    colXL: 3, // buat lebar 1232 ke atas
-                  ),
-                  child: Container(),
-                )
-              ]),
               VisibilityDetector(
                 key: _footerSectionKey,
                 onVisibilityChanged: (VisibilityInfo info) {

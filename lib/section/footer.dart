@@ -1,4 +1,4 @@
-import 'package:binav_company_profile/section/contact_us.dart';
+import 'package:binav_company_profile/section/home/contact_us.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_ui/responsive_ui.dart';
