@@ -26,7 +26,7 @@ class _OurClientState extends State<OurClient> {
     },
     {
       "nama": "PT. DewiRahmi Jaya Perkasa",
-      "logo": "assets/client/PT_DewiRahmi.svg",
+      "logo": "assets/client/PT_DewiRahmi.png",
     },
     {
       "nama": "PT. Feria Konstruksindo",
