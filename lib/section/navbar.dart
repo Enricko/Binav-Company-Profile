@@ -102,6 +102,23 @@ class _NavbarSectionState extends State<NavbarSection> {
         ),
         if (MediaQuery.of(context).size.width > 800)
           HoverText(
+            selected: widget.currentSection.toLowerCase() == "gallerys",
+            ontap: () {
+              Scrollable.ensureVisible(
+                widget.globalKeys['gallerys']!.currentContext!,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
+            text: "GALLERY",
+            defaultColor: scrollBool() ? Colors.white : Colors.black,
+            hoverColor: scrollBool() ? Colors.white : Colors.blue,
+          ),
+        SizedBox(
+          width: width / 49,
+        ),
+        if (MediaQuery.of(context).size.width > 800)
+          HoverText(
             selected: widget.currentSection.toLowerCase() == "client",
             ontap: () {
               Scrollable.ensureVisible(

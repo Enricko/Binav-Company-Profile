@@ -1,5 +1,6 @@
 import 'package:binav_company_profile/section/home/about_us.dart';
 import 'package:binav_company_profile/section/home/our_client.dart';
+import 'package:binav_company_profile/section/home/gallery.dart';
 import 'package:binav_company_profile/section/home/services.dart';
 import 'package:binav_company_profile/section/navbar.dart';
 import 'package:flutter/foundation.dart';
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey _homeSectionKey = GlobalKey();
   final GlobalKey _aboutSectionKey = GlobalKey();
   final GlobalKey _servicesSectionKey = GlobalKey();
+  final GlobalKey _gallerySectionKey = GlobalKey();
   final GlobalKey _clientSectionKey = GlobalKey();
   final GlobalKey _contactSectionKey = GlobalKey();
   final GlobalKey _footerSectionKey = GlobalKey();
@@ -82,6 +84,7 @@ class _HomePageState extends State<HomePage> {
           "home": _homeSectionKey,
           "about": _aboutSectionKey,
           "services": _servicesSectionKey,
+          "gallerys": _gallerySectionKey,
           "client": _clientSectionKey,
           "contact": _contactSectionKey,
           "footer": _footerSectionKey,
@@ -150,6 +153,27 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(5),
                     child: Text(
                       "Services".toUpperCase(),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  Scrollable.ensureVisible(
+                    _gallerySectionKey.currentContext!,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                title: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Text(
+                      "gallery".toUpperCase(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -249,6 +273,15 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 child: Services(),
+              ),
+              VisibilityDetector(
+                key: _gallerySectionKey,
+                onVisibilityChanged: (VisibilityInfo info) {
+                  setState(() {
+                    sectionVisibility['gallerys'] = info.visibleFraction; // Store visible fraction
+                  });
+                },
+                child: Gallery(),
               ),
               VisibilityDetector(
                 key: _clientSectionKey,

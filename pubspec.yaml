@@ -53,6 +53,7 @@ flutter:
     - assets/
     - assets/client/
     - assets/service/
+    - assets/gallery/
     - assets/icon_whatsapp.svg
     - assets/client/PT_BKI.png
     - assets/client/PT_PDC.jpg

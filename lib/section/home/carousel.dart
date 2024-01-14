@@ -63,6 +63,7 @@ class _CarouselState extends State<Carousel> {
             enlargeCenterPage: true,
             aspectRatio: 16 / 9,
             viewportFraction: 1.0,
+            enlargeFactor: 0.1,
           ),
         ),
         if (width > 700)

@@ -80,7 +80,7 @@ class _OurClientState extends State<OurClient> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xfff6f6f6),
+      color: Color(0xFFF0F8FF),
       padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
       child: SafeArea(
         child: Column(
