@@ -26,7 +26,7 @@ class _OurClientState extends State<OurClient> {
     },
     {
       "nama": "PT. DewiRahmi Jaya Perkasa",
-      "logo": "assets/client/PT_DewiRahmi.png",
+      "logo": "assets/client/PT_Dewirahmi.png",
     },
     {
       "nama": "PT. Feria Konstruksindo",
@@ -35,10 +35,6 @@ class _OurClientState extends State<OurClient> {
     {
       "nama": "PT. Putra Tunggal Mandiri",
       "logo": "assets/client/PT_PutraTunggalMandiri.jpg",
-    },
-    {
-      "nama": "PT. Geotindo Survey Service",
-      "logo": "assets/client/PT_Geotindo.png",
     },
     {
       "nama": "PT. Indo Strait Tbk",
@@ -75,6 +71,59 @@ class _OurClientState extends State<OurClient> {
     {
       "nama": "PT. Onasis Indonesia",
       "logo": "assets/client/PT_Onasis.png",
+    },
+    // asd
+    {
+      "nama": "PT. Elnusa Tbk",
+      "logo": "assets/client/PT_Elnusa.png",//
+    },
+    {
+      "nama": "PT. Pertamina PHM",
+      "logo": "assets/client/PT_Pertamina_PHM.jpg",//
+    },
+    {
+      "nama": "PT. Arung",
+      "logo": "assets/client/PT_Arung.jpg",//
+    },
+    {
+      "nama": "PT. Chevron Pacific Indonesia",
+      "logo": "assets/client/PT_Chevron.png",//
+    },
+    {
+      "nama": "PT. Japan Drilling Indonesia",
+      "logo": "assets/client/PT_JDI.jpg",//
+    },
+    {
+      "nama": "PT. Maspion",
+      "logo": "assets/client/PT_Maspion.jpg",//
+    },
+    {
+      "nama": "PT. Raga Perkasa Ekaguna",
+      "logo": "assets/client/PT_Raga_Perkasa_Ekaguna.jpg",//
+    },
+    {
+      "nama": "PT. CNOOC SES LTD",
+      "logo": "assets/client/PT_CNOOC.jpg",
+    },
+    {
+      "nama": "PT. Golder Associates",
+      "logo": "assets/client/PT_Golder_Associates.png",
+    },
+    {
+      "nama": "PT. Anadarko",
+      "logo": "assets/client/PT_Anadarko.png",
+    },
+    {
+      "nama": "PT. Geo Ocean",
+      "logo": "assets/client/PT_Geo_Ocean.png",
+    },
+    {
+      "nama": "PT. Modern Widya Tehnical",
+      "logo": "assets/client/PT_Modern_Widya_Tehnical.png",
+    },
+    {
+      "nama": "PT. Modern Widya Tehnical",
+      "logo": "assets/client/PT_Lancar_Rejeki.png",
     },
   ];
   @override
@@ -122,10 +171,10 @@ class _OurClientState extends State<OurClient> {
                   return Div(
                     divison: Division(
                       colXL: 2,
-                      colL: 4,
-                      colM: 4,
+                      colL: 2,
+                      colM: 3,
                       colS: 4,
-                      colXS: 6,
+                      colXS: 4,
                     ),
                     child: Tooltip(
                       message: e['nama']!,

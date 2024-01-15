@@ -73,7 +73,7 @@ class _AboutUsSectionState extends State<AboutUsSection> {
                           ),
                           Text(
                               "Selamat datang di PT. Binav Maju Sejahtera, pusat inovasi pemetaan, survei, dan produk kartografi yang terkemuka. Sejak awal, kami memimpin industri dengan dedikasi tinggi dalam menyajikan solusi pemetaan yang terdepan dan terpercaya.\n\n"
-                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi Modern dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan dengan mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
+                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi modern dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan dengan mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
                               "Kami tak hanya sekadar menawarkan layanan pemetaan dan survei berkualitas tinggi, tetapi juga menghasilkan produk kartografi inovatif yang memenuhi kebutuhan unik setiap klien kami. Setiap produk kami, dibuat dengan akurat dan terampil untuk memastikan kepuasan pelanggan."),
                         ],
                       ),
@@ -128,7 +128,7 @@ class _AboutUsSectionState extends State<AboutUsSection> {
                           ),
                           Text(
                             "Selamat datang di PT. Binav Maju Sejahtera, pusat inovasi pemetaan, survei, dan produk kartografi yang terkemuka. Sejak awal, kami memimpin industri dengan dedikasi tinggi dalam menyajikan solusi pemetaan yang terdepan dan terpercaya.\n\n"
-                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi Modern dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan dengan mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
+                              "Komitmen kami terhadap ketepatan, keakuratan, dan ketelitian menjadi landasan utama dalam setiap layanan kami. Dengan menggunakan teknologi modern dan tim ahli berpengalaman, kami mendedikasikan diri untuk memberikan solusi pemetaan dengan mengubah pandangan menjadi realitas yang dapat diandalkan.\n\n"
                               "Kami tak hanya sekadar menawarkan layanan pemetaan dan survei berkualitas tinggi, tetapi juga menghasilkan produk kartografi inovatif yang memenuhi kebutuhan unik setiap klien kami. Setiap produk kami, dibuat dengan akurat dan terampil untuk memastikan kepuasan pelanggan.",
                           ),
                         ],

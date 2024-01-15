@@ -28,6 +28,18 @@ class _GalleryState extends State<Gallery> {
     {
       "image" : "assets/gallery/gallery5.jpeg",
     },
+    {
+      "image" : "assets/gallery/gallery6.jpg",
+    },
+    {
+      "image" : "assets/gallery/gallery7.jpg",
+    },
+    {
+      "image" : "assets/gallery/gallery8.jpg",
+    },
+    {
+      "image" : "assets/gallery/gallery9.jpg",
+    },
   ];
   @override
   Widget build(BuildContext context) {

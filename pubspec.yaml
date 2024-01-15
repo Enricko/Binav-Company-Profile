@@ -27,6 +27,7 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
   flutter_launcher_icons: "^0.13.1"
+  # flutter_native_splash: ^2.3.9
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -43,6 +44,10 @@ flutter_launcher_icons:
   macos:
     generate: true
     image_path: "assets/logo_singkat.jpg"
+
+# flutter_native_splash:
+#   image: assets/logox2.png
+#   color: "#FFFFFF"
 
 flutter:
 
