@@ -9,7 +9,8 @@ class Services extends StatefulWidget {
   State<Services> createState() => _ServicesState();
 }
 
-class _ServicesState extends State<Services> {
+class _ServicesState extends State<Services> with SingleTickerProviderStateMixin {
+  TabController? controller;
   List<Map<String, String>> listService = [
     {
       "nama": "Debris Survey",
@@ -36,11 +37,18 @@ class _ServicesState extends State<Services> {
       "logo": "assets/service/hydrographic_survey.svg",
     },
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TabController(length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Container(
-      color: Color(0xFFF0F8FF),
+      color: const Color(0xFFF0F8FF),
       padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
       child: SafeArea(
         child: Column(
@@ -68,7 +76,36 @@ class _ServicesState extends State<Services> {
                     ),
                     const SizedBox(
                       height: 30,
-                    )
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TabBar(
+                          controller: controller,
+                          isScrollable: true,
+                          labelColor: Colors.blueAccent,
+                          unselectedLabelColor: const Color(0xFF5E5E5E),
+                          labelStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          unselectedLabelStyle:
+                              const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          dividerColor: Colors.transparent,
+                          indicatorPadding: const EdgeInsets.only(right: 10),
+                          indicatorColor: Colors.blueAccent,
+                          tabs: const [
+                            Tab(text: 'Geophysical Survey Services'),
+                            Tab(text: 'Offshore Positioning Support'),
+                          ],
+                          onTap: (index) {
+                            controller!.animateTo(index);
+                            setState(() {});
+                          },
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),
@@ -79,7 +116,7 @@ class _ServicesState extends State<Services> {
               children: listService.map(
                 (e) {
                   return Div(
-                    divison: Division(
+                    divison: const Division(
                       colXL: 3,
                       colL: 4,
                       colM: 6,
