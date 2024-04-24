@@ -38,7 +38,7 @@ class _ServicesState extends State<Services> with SingleTickerProviderStateMixin
         "nama": "Pre-Installation Survey",
         "small-desc":
             "The design of subsea routes or any subsea constructions normally takes a long period of time to be completed. When a pre-engineering survey for designing a route is done, since noumerous events and changes might have taken place on the seabed in the long run, it is necessary to perform another survey within a brief period of time which is called pre-installation survey. Running a pre-installation survey ensures us whether there are any new sunken objects and debris or not. Therefore, this operation is a decisive factor in subsea constructions.All Results for pre-installation survey are presented in the following reports:",
-        "desc":'''
+        "desc": '''
         <p>The design of subsea routes or any subsea constructions normally takes a long period of time to be completed. When a pre-engineering survey for designing a route is done, since noumerous events and changes might have taken place on the seabed in the long run, it is necessary to perform another survey within a brief period of time which is called pre-installation survey.
         Running a pre-installation survey ensures us whether there are any new sunken objects and debris or not. Therefore, this operation is a decisive factor in subsea constructions.
         All Results for pre-installation survey are presented in the following reports:</p>
@@ -52,7 +52,7 @@ class _ServicesState extends State<Services> with SingleTickerProviderStateMixin
         "nama": "Post-lay Survey",
         "small-desc":
             "After the installation of pipeline, post-lay survey operation plays a vital route in determining the free span locations. Spans should be corrected by placing grout bags beneath the pipeline and filling them using ordinary Portland liquid cement or grout.",
-        "desc":'''
+        "desc": '''
         <p>After the installation of pipeline, post-lay survey operation plays a vital route in determining the free span locations. Spans should be corrected by placing grout
         bags beneath the pipeline and filling them using ordinary Portland liquid cement or grout.<br>
         The below figures demonstrate some detected free spans using two technologies, side scan sonar and multibeam echosounder, while these two types of data are integrated:</p>
@@ -64,7 +64,7 @@ class _ServicesState extends State<Services> with SingleTickerProviderStateMixin
         "nama": "Geophysical Site Survey",
         "small-desc":
             "Geophysical data provides vital information on the geology of the sub-bottom strata, required for any engineering, construction, drilling, and production and mining activity. Detailed geophysical surveys and assessments of the seabed and sub-seabed plays a decisive factor in reducing the risks and make them cost-effective design of marine structures and subsea installations. Geophysical site survey is often conducted when a jack-up rig wants to approach to the platform and this operation ensures the client about seabed obstructions and geology of the seabed.",
-        "desc":'''
+        "desc": '''
         <p>Geophysical data provides vital information on the geology of the sub-bottom strata, required for any engineering, construction, drilling, and production and mining activity. Detailed geophysical surveys and assessments of the seabed and sub-seabed plays a decisive factor in reducing the risks and make them cost-effective design of marine structures and subsea installations. Geophysical site survey is often conducted when a jack-up rig wants to approach to the platform and this operation ensures the client about seabed obstructions and geology of the seabed.</p>
         <br>
         <p>What are we trying to find out through a geophysical site survey?</p>
@@ -92,15 +92,78 @@ class _ServicesState extends State<Services> with SingleTickerProviderStateMixin
         ''',
       },
     ],
-    1:[
+    1: [
       {
-        "nama":"Barge And Tug Positioning",
-        "small-desc":"A precise positioning is a fundamental parameter for any survey and engineering tasks during sea operations. Such operations rely on a global infrastructure and expertise to deliver high accuracy positioning, at any locations and any time. We are capable of providing the required equipment with your related projects on the scheduled time.",
-        "desc":'''
-        <p>A precise positioning is a fundamental parameter for any survey and engineering tasks during sea operations. Such operations rely on a global infrastructure and expertise to deliver high accuracy positioning, at any locations and any time. We are capable of providing the required equipment with your related projects on the scheduled time.<br>
-During barge support near the platforms, we are able to prepare a safe and accurate barge and tug management system for anchor handling operation. The system is mobilized on anchor handling vessels so that the exact vessel's position, speed and heading can be monitored from the main barge during the activity. Instructions for anchor deployment and recovery are followed through this system as well.</p>
+        "nama": "Barge And Tug Positioning",
+        "small-desc":
+            "A precise positioning is a fundamental parameter for any survey and engineering tasks during sea operations. Such operations rely on a global infrastructure and expertise to deliver high accuracy positioning, at any locations and any time. We are capable of providing the required equipment with your related projects on the scheduled time.",
+        "desc": '''
+        <p>A precise positioning is a fundamental parameter for any survey and engineering tasks during sea operations. Such operations rely on a global infrastructure and expertise to deliver high accuracy positioning, at any locations and any time. We are capable of providing the required equipment with your related projects on the scheduled time.<br>During barge support near the platforms, we are able to prepare a safe and accurate barge and tug management system for anchor handling operation. The system is mobilized on anchor handling vessels so that the exact vessel's position, speed and heading can be monitored from the main barge during the activity. Instructions for anchor deployment and recovery are followed through this system as well.</p>
         ''',
-      }
+      },
+      {
+        "nama": "Pipe & Cable Laying Survey Support",
+        "small-desc": "We offer the following activities during construction survey support.",
+        "desc": '''
+        <h5>We offer the following activities during construction survey support : </h5>
+        <ul>
+          <ul>
+            <li>Pipe lay and cable lay positioning and touchdown monitoring</li>
+            <li>Construction barge and support vessels positioning</li>
+            <li>Anchor handling support</li>
+            <li>Structure installing guidance</li>
+            <li>Acoustic underwater positioning</li>
+            <li>ROV survey sensors and system integrations</li>
+            <li>Jumper and spool piece metrology</li>
+            <li>Dedicated ROV support vessels</li>
+          </ul>
+        </ul>
+        <br>
+        <p>\tDuring barge constuction support for activities such as pipe lay, ASIA AKAM INDUSTRY CO. can provide a multi fug management system for the anchor operations, with all of the anchor handling vessels managed with the main barge for deploying the emplacement of precise position for the main barge its anchor.</p>
+        <br>
+        <p>\tDuring installation, ASIA AKAM INDUSTRY CO. will position the barge and anchor handling vessels involved in the installation activity as well as assets that are being installed whetherit is pipe line or cable, jacket, PLEM, etc.<br>ASIA AKAM INDUSTRY CO. has a lot experience in precise positioning of different types of vessels in various projects. For this purpouses, we utilize high-technology equipment.</p>
+        ''',
+      },
+      {
+        "nama": "Rig Positioning Services",
+        "small-desc":
+            "A rig movement will be done when Mobile Offshore Drilling Unit (MODU) moves from one well location to another. Our profession is to provide positioning and navigation for the MODU, while moving from one location to the next.",
+        "desc": '''
+        <p>A rig movement will be done when Mobile Offshore Drilling Unit (MODU) moves from one well location to another. Our profession is to provide positioning and navigation for the MODU, while moving from one location to the next.<br>The surveying equipment includes DGPS receivers, gyro compasses and computers along with positioning and navigation software.</p>
+        ''',
+      },
+      {
+        "nama": "Jacket/Topside Installation and dimension control Services",
+        "small-desc":
+            "We have sufficient experience in jacket and subsea installation by utilizing the most recent methods and technologies. Precise positioning system will be set up for jacket installer barge, jacket or any offshore construction that should be installed on the seabed. Real time position of jacket and barge will be controlled from the main barge and the as-built jacket leg location, can be checked by this highly accurate positioning system.",
+        "desc": '''
+        <p>We have sufficient experience in jacket and subsea installation by utilizing the most recent methods and technologies. Precise positioning system will be set up for jacket installer barge, jacket or any offshore construction that should be installed on the seabed. Real time position of jacket and barge will be controlled from the main barge and the as-built jacket leg location, can be checked by this highly accurate positioning system.<br>Our surveyors will navigate the crane and barge position to set up jackets at the real position. In addition, topside and jacket dimensions will be controlled in the yard before installation.</p>
+        ''',
+      },
+      {
+        "nama": "Underwater Positioning",
+        "small-desc":
+            "In many cases, for offshore installation or inspection operations, it would be essential to have a highly accurate positioning system. There are many different classes of underwater positioning systems that each has been established for the special purposes. We conduct various types of subsea installations and operations as below.",
+        "desc": '''
+        <p>In many cases, for offshore installation or inspection operations, it would be essential to have a highly accurate positioning system. There are many different classes of underwater positioning systems that each has been established for the special purposes.<br>We conduct various types of subsea installations and operations as below.</p>
+        <ul>
+          <li>Diving positioning support</li>
+          <li>Deep water ROV positioning support</li>
+          <li>Spool installation positioning support</li>
+          <li>Spool meterology</li>
+          <li>Pipe line support installation</li>
+          <li>Rise angle monitoring</li>
+        </ul>
+        ''',
+      },
+      {
+        "nama": "LBL Spool Meteorology",
+        "small-desc":
+            "Prior to design and building of a spool structure, the engineering studies and special underwater measurements are essential to be conducted to avoid waste of money and time in offshore operation. LBL meteorology is the best and known method for this type of project. We have undertaken numerous LBL meteorology and spool installation projects in the Persian Gulf and will be able to handle this type of the project by own resources. For more information about detail of performed job, please refer to list of projects",
+        "desc": '''
+        <p>Prior to design and building of a spool structure, the engineering studies and special underwater measurements are essential to be conducted to avoid waste of money and time in offshore operation. LBL meteorology is the best and known method for this type of project. We have undertaken numerous LBL meteorology and spool installation projects in the Persian Gulf and will be able to handle this type of the project by own resources. For more information about detail of performed job, please refer to list of projects.</p>
+        ''',
+      },
     ]
   };
 
